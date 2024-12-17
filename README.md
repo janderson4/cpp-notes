@@ -15,6 +15,7 @@
 	- [Bitwise Operations](#bitwise-operations)
 	- [Ternary Operators](#ternary-operators)
 	- [Rounding](#rounding)
+	- [The Comma Operator](#the-comma-operator)
 - [Control Statements](#control-statements)
 - [Functions](#functions)
 - [Data Structures](#data-structures)
@@ -220,6 +221,8 @@ For saving value:
 ```
 double x=round(y*pow(10,dec))/pow(10,dec);
 ```
+### The Comma Operator
+An expression can include multiple statements separated by commas, and only the last statement will be used when the expression is evaluated. 
 ## Control Statements
 ```
 if (_____){
@@ -490,7 +493,6 @@ e.g.
 ```
 typedef vector<vector<string>> str_vec;
 ```
-An expression can include multiple statements separated by commas, and only the last statement will be used when the expression is evaluated. 
 ## Random Numbers
 First, seed:
 ```
