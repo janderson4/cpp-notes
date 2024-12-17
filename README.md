@@ -186,8 +186,7 @@ delete [pointer-name];
 - \+
 - \-
 - \*
-- ** exponent
-- pow(x,y) (exponent can be floating-point)
+- pow(x,y)
 - abs(x)
 - ++ increment
 - \-- decrement
