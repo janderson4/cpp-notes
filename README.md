@@ -1,58 +1,35 @@
 # C++ Notes
-## Table of Contents
+## Contents
 - [Input and Output](#input-and-output)
 - [Comments](#comments)
 - [The Standard Library](#the-standard-library)
 - [Data Types](#data-types)
-   - [Modifiers](#modifiers)
-   - [Variables](#variables)
-   - [Strings](#strings)
-   - [Chars](chars)
+	- [Modifiers](#modifiers)
+	- [Variables](#variables)
+	- [Strings](#strings)
+	- [Chars](chars)
 - [Pointers](#pointers)
 - [Operations](#operations)
-   - Basic Math Operations
-   - Boolean Operations
-   - Bitwise Operations
-   - Ternary Operators
-   - Rounding
-
-9. [Control Statements](#control-statements)
-   - Conditional Statements (if, else)
-   - Loops (while, for, range-based)
-   - Break and Continue
-
-10. [Functions](#functions)
-    - Function Declaration and Definition
-    - Function Overloading
-    - Passing by Reference and Value
-
-11. [Data Structures](#data-structures)
-    - Vectors
-    - Sets and Multisets
-    - Maps
-    - Queues
-    - Priority Queues
-    - Arrays
-    - Structures
-    - Classes
-
-12. [Macros and Typedefs](#macros-and-typedefs)
-    - Defining Macros
-    - Type Aliasing with typedef
-
-13. [Random Numbers](#random-numbers)
-    - Seed Initialization
-    - Generating Random Integers and Doubles
-
-14. [Best Practices](#best-practices)
-    - Use of smart pointers
-    - Error handling strategies
-    - General coding practices
-
-15. [Conclusion](#conclusion)
-    - Summary of Key Points
-    - Further Reading
-## Input and Output <a name="input-output"></a>
+	- [Basic Math](#basic-math)
+	- [Boolean Operations](#boolean-operations)
+	- [Bitwise Operations](#bitwise-operations)
+	- [Ternary Operators](#ternary-operators)
+	- [Rounding](#rounding)
+- [Control Statements](#control-statements)
+- [Functions](#functions)
+- [Data Structures](#data-structures)
+	- [Vectors](#vectors)
+    - [Sets](#sets)
+    - [Multisets](#multisets)
+    - [Maps](#maps)
+    - [Queues](#queues)
+    - [Priority Queues](#priority-queues)
+    - [Arrays](#arrays)
+    - [Structures](#structures)
+    - [Classes](#classes)
+- [Macros and Typedefs](#macros-and-typedefs)
+- [Random Numbers](#random-numbers)
+## Input and Output
 Print to standard output:
 ```
 std::cout<<_____<<std::endl;
@@ -119,12 +96,12 @@ Common types:
 - char (1 byte)
 - bool
 - string
-#### Modifiers
+### Modifiers
 All number types can also be preceded by these modifiers:
 - "unsigned" creates the same type with no negatives
 - "long"
 - "short"
-#### Variables
+### Variables
 Multiple variables of the same type can be declared together:
 ```
 int x,y;
@@ -142,22 +119,16 @@ Multiple variables can be initialized to the same value by stringing together eq
 ```
 x=y=z=1;
 ```
-A null type can be created by:
-```
-decltype(nullptr)
-```
-#### Strings
+### Strings
 Strings are created using double quotes:
 ```
 string s="Hello world";
 ```
 Strings can be separated into multiple lines by including a backslash at the end of each line. 
-
 To get a string's length:
 ```
 int n=s.length();
 ```
-
 To concatenate string literals, simply place them side by side or with only whitespace between:
 ```
 string s="Hello " "world";
@@ -170,7 +141,7 @@ To convert from string to int:
 ```
 x=stoi(s);
 ```
-#### Chars
+### Chars
 Chars are created using single quotes:
 ```
 char x='z';
@@ -210,35 +181,37 @@ This is followed by:
 delete [pointer-name];
 ```
 ## Operations
-#### Basic Math
-- +
-- -
-- *
+### Basic Math
+- \+
+- \-
+- \*
 - ** exponent
 - pow(x,y) (exponent can be floating-point)
 - abs(x)
 - ++ increment
 - \-- decrement
+
 When the increment\decrement operators are placed after a variable, the expression is evaluated before the increment/decrement operation. 
-#### Boolean Operations
+### Boolean Operations
 - && and
 - || or
-#### Bitwise Operations
+### Bitwise Operations
 - & and
 - | or
 - ^ XOR
 - ~ invert
 - << bit-shift left
-- >> bit-shift right
+- \>> bit-shift right
+
 Bitwise operations can also be placed before an equals sign to operate on the variable before the operator, e.g.:
 ```
 x^=y; // equivalent to x=x^y;
 ```
-#### Ternary Operators
+### Ternary Operators
 ```
 [condition] ? [code if true] : [code if false];
 ```
-#### Rounding
+### Rounding
 For printing (dec is the number of decimals to round to):
 ```
 cout<<fixed<<setprecision(dec)<<x;
@@ -300,7 +273,7 @@ int main(){
 }
 ```
 ## Data Structures
-#### Vectors
+### Vectors
 To declare a vector:
 ```
 vector<[type]> my_vector;
@@ -341,7 +314,7 @@ To reverse a vector:
 ```
 reverse(my_vector.begin(), my_vector.end());
 ```
-#### Sets
+### Sets
 There are two types:
 - unordered_set (hashing)
 - set (balanced BST)
@@ -367,10 +340,11 @@ for (auto it=s.begin(), it!=s.end(); it++){
 }
 ```
 If the set is not an unordered_set, this will return the elements in increasing order. 
-#### Multisets
+### Multisets
 These work in the same way as sets, except they count how many times elements have been added to them. There are again two types:
 - unordered_multiset
 - multiset
+
 To remove all instances of an element:
 ```
 my_multiset.erase([value]);
@@ -379,10 +353,11 @@ To remove just one instance:
 ```
 my_multiset.erase(my_multiset.find([value]));
 ```
-#### Maps
+### Maps
 There are two map types:
 - unordered_map
 - map
+
 To create a map:
 ```
 map<[key-type],[value-type]> my_map;
@@ -407,7 +382,7 @@ for (auto x : my_map){
 	// use x.first and x.second
 }
 ```
-#### Queues
+### Queues
 ```
 queue<[type]> my_queue;
 ```
@@ -423,7 +398,7 @@ To remove the front element:
 ```
 my_queue.pop();
 ```
-#### Priority Queues
+### Priority Queues
 ```
 priority_queue<[type]> my_pq;
 ```
@@ -439,9 +414,10 @@ To remove the largest element:
 ```
 my_pq.pop();
 ```
-#### Arrays
+### Arrays
 - built-in
 - fixed length
+
 Declare with type and size:
 ```
 int my_array[10];
@@ -462,7 +438,7 @@ Access an array element:
 ```
 x=my_array[i];
 ```
-#### Structures
+### Structures
 ```
 struct my_struct{
 	[type] [variable-name];
@@ -481,7 +457,7 @@ Structures are created by:
 ```
 my_struct* my_struct1=new my_struct;
 ```
-#### Classes
+### Classes
 ```
 class my_class([arguments]){
 	[type] [variable-name];
@@ -501,7 +477,7 @@ Classes are created by:
 my_class* my_class1=new my_class([arguments]);
 ```
 However, the default constructor must be called without parenthesis. 
-
+## Macros and Typedefs
 Use blind replacement to define a name for block of code, so that the block of code will replace the name wherever it is later used:
 ```
 #define [name] [replacement]
